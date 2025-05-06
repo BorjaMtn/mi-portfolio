@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* 2. Definir las variables de tema personalizadas para Tailwind v4 */
+@theme {
+    /* Paleta de Colores */
+    --color-brand-dark: #111827;        /* Base oscura (gray-900) */
+    --color-brand-dark-secondary: #1F2937; /* Secundaria oscura (gray-800) */
+    --color-brand-dark-tertiary: #374151;  /* Terciaria oscura (gray-700 - para bordes) */
+  
+    --color-brand-light: #F9FAFB;        /* Texto/elementos claros (gray-50) */
+    --color-brand-light-secondary: #D1D5DB; /* Texto secundario claro (gray-300) */
+  
+    --color-brand-accent: #22D3EE;       /* Acento Cyan 400 */
+    --color-brand-accent-hover: #06B6D4;  /* Acento Cyan 500 (hover) */
+  
+    /* Tipografía (Ejemplo si quisieras usar una fuente personalizada) */
+    /* --font-family-sans: 'Inter', sans-serif; */
+  
+    /* Sombras / Efectos (Ejemplo para el glow) */
+    /* Nota: La sintaxis exacta para sombras complejas como variables puede variar en v4 final */
+    /* Por ahora, podríamos aplicar el glow directamente con clases de utilidad o
+       definir variables CSS estándar fuera del @theme y usarlas */
+  }
+  
+  /* 3. Aplicar estilos base y modo oscuro */
+  @layer base {
+    /* Estilos base para HTML y Body */
+    html {
+      scroll-behavior: smooth;
+    }
+  
+    body {
+      @apply bg-white text-gray-800 antialiased; /* ESTILOS MODO CLARO POR DEFECTO */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      /* @apply font-sans; */ /* Aplica fuente personalizada si se definió arriba */
+    }
+  
+    main {
+      flex-grow: 1;
+    }
+  
+    /* Estilos para la selección de texto */
+    ::selection {
+      @apply bg-brand-accent text-brand-dark; /* Usa nuestras variables */
+    }
+  
+    /* Estilos de foco visible para accesibilidad */
+    :focus-visible {
+      outline: 3px solid var(--color-brand-accent); /* Usa nuestra variable de acento */
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  
+    /* --- ESTILOS PARA MODO OSCURO --- */
+    /* Aplicamos estos estilos cuando el tag HTML tiene la clase .dark */
+    html.dark {
+      body {
+        /* Usamos nuestras variables CSS definidas en @theme */
+        @apply bg-brand-dark text-brand-light-secondary;
+      }
+  
+      /* Podemos definir otros overrides globales para modo oscuro aquí si es necesario */
+      /* Ejemplo: cambiar color de borde por defecto */
+       /* border-color: var(--color-brand-dark-tertiary); */
+    }
+  }
+  
+  /* Puedes añadir estilos para componentes específicos en @layer components si es necesario */
+  /* @layer components {
+    .mi-componente-personalizado {
+      @apply ...;
+    }
+  } */

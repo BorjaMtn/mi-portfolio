@@ -1,0 +1,55 @@
+---
+// src/layouts/Layout.astro
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css"; // <-- ¡IMPORTANTE! Importar el CSS global
+import "aos/dist/aos.css"; // <-- Importa el CSS de AOS
+
+export interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const siteLanguage = "es";
+const isDarkMode = true; // Mantenemos modo oscuro forzado por ahora
+---
+
+<!doctype html>
+<html lang={siteLanguage} class:list={[{ dark: isDarkMode }]}>
+  {/* La clase 'dark' se sigue aplicando aquí */}
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | Borja Montaño</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  {
+    /* El theme-color debería idealmente usar la variable CSS, pero puede ser difícil aquí.
+        Podemos dejar el valor estático o intentar actualizarlo con JS si es necesario.
+        Por ahora, mantenemos el valor estático del color base oscuro. */
+  }
+  <meta name="theme-color" content="#111827" />
+  {/* Enlaces a fuentes personalizadas irían aquí */}
+  <meta name="generator" content={Astro.generator} />
+  {/* Astro se encargará de procesar e inyectar los estilos de global.css */}
+
+  <body>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    {/* Script para inicializar AOS */}
+    <script>
+      import AOS from "aos";
+      AOS.init({
+        duration: 800, // Duración de la animación en ms
+        once: true, // Si la animación debe ocurrir solo una vez
+        offset: 50, // Offset (en px) desde el borde de la ventana para disparar la animación
+      });
+    </script>
+  </body>
+</html>
+{/* El bloque <style is:global> se ha eliminado */}

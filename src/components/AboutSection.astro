@@ -1,0 +1,242 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "/public/images/yo.webp";
+
+const skills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Laravel",
+  "Node.js",
+  "PHP",
+  "Astro",
+  "Tailwind CSS",
+  "Docker",
+  "MySQL",
+  "PostgreSQL",
+  "Git",
+  "API RESTful",
+];
+---
+
+<section
+  id="sobre-mi"
+  class="relative py-28 bg-brand-dark text-brand-light overflow-hidden"
+>
+  <div class="container mx-auto px-6 lg:px-16 relative z-10">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <!-- Imagen con efecto premium -->
+      <div
+        class="animate-fade-in-up relative mx-auto md:mx-0 group w-[320px] h-[320px] lg:w-[380px] lg:h-[380px] rounded-3xl overflow-hidden shadow-2xl border border-brand-dark-tertiary bg-brand-dark/30 backdrop-blur-md transition-all duration-500"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-brand-accent/40 via-transparent to-sky-500/30 blur-xl opacity-0 group-hover:opacity-50 transition-all"
+        >
+        </div>
+        <Image
+          src={profileImage}
+          alt="Foto de perfil de Borja Montaño"
+          width={380}
+          height={380}
+          format="webp"
+          quality={90}
+          class="relative w-full h-full object-cover object-center scale-105 group-hover:scale-100 transition-transform duration-500"
+        />
+      </div>
+
+      <!-- Contenido -->
+      <div class="text-left space-y-6 max-w-2xl">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight animate-fade-in-up"
+        >
+          Conoce a <span class="text-brand-accent">Borja Montaño</span>
+        </h2>
+
+        <p
+          class="text-lg text-brand-light-secondary leading-relaxed animate-fade-in-up"
+        >
+          Soy un <strong>desarrollador Full Stack</strong> enfocado en crear soluciones
+          digitales impactantes. Con base en <strong>Bilbao</strong>, colaboro
+          con empresas y startups para construir productos modernos, escalables
+          y centrados en el usuario.
+        </p>
+
+        <p
+          class="text-brand-light-secondary animate-fade-in-up animation-delay-300"
+        >
+          Trabajo con tecnologías como <strong>React</strong>, <strong
+            >Next.js</strong
+          > y <strong>Laravel</strong>, fusionando diseño funcional con código
+          limpio. Creo firmemente en el aprendizaje constante, el trabajo en
+          equipo y en desarrollar software que realmente resuelva problemas.
+        </p>
+
+        <div class="mt-8">
+          <h3
+            class="text-xl font-semibold text-brand-light mb-4 animate-fade-in-up animation-delay-600"
+          >
+            Habilidades Técnicas
+          </h3>
+          <div
+            class="flex flex-wrap gap-3 animate-fade-in-up animation-delay-1000"
+          >
+            {
+              skills.map((skill) => (
+                <span class="px-4 py-1.5 rounded-full border border-brand-accent/30 text-sm font-medium bg-brand-dark-tertiary/60 text-brand-light-secondary hover:bg-brand-accent/20 hover:text-brand-accent transition shadow-sm">
+                  {skill}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="mt-8 animate-fade-in-up animation-delay-2000">
+          <a
+            href="https://www.linkedin.com/in/borja-monta%C3%B1o-10b46b307/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 px-5 py-3 bg-brand-accent text-brand-dark font-semibold rounded-xl shadow-lg hover:bg-brand-accent-hover transition-all"
+          >
+            Conectar en LinkedIn
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/* Indicador "Scroll Down" Animado */}
+  <div
+    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20 hidden md:block animate-fade-in animation-delay-1000"
+  >
+    <a
+      href="#contacto"
+      aria-label="Ir a contacto"
+      class="text-brand-light-secondary hover:text-brand-accent transition-colors"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 animate-bounce"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  @keyframes gradient-text {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-text {
+    background-size: 200% auto; /* Tamaño del gradiente para animación */
+    animation: gradient-text 5s linear infinite;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    /* Aplica animación de entrada */
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0; /* Empieza invisible */
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Animación para las formas de fondo */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 15s infinite ease-in-out; /* Duración larga y suave */
+  }
+
+  /* Animación para el brillo del nombre */
+  @keyframes tilt {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(1deg);
+    }
+  }
+  .animate-tilt {
+    animation: tilt 10s infinite linear alternate;
+  }
+
+  /* Clases de utilidad para retrasos (Tailwind no las tiene por defecto) */
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+</style>

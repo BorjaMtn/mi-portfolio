@@ -1,0 +1,88 @@
+<header
+  class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-zinc-200 dark:border-zinc-700 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-all duration-500 animate-slide-down animation-delay-300"
+>
+  <div class="flex items-center justify-between px-6 h-16">
+    <!-- Logo como símbolo distintivo -->
+    <a
+      href="/"
+      class="flex items-center text-xl font-black tracking-tight text-gray-900 dark:text-white hover:scale-105 transition-transform duration-300"
+    >
+      <span
+        class="inline-block w-4 h-4 rounded-full bg-gradient-to-tr from-brand-accent to-brand-accent-hover mr-3 shadow-lg"
+      ></span>
+      Portfolio
+    </a>
+
+    <!-- Navegación con estilo único -->
+    <nav
+      class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-700 dark:text-zinc-300"
+    >
+      <a href="/#proyectos" class="relative group">
+        <span class="transition-colors group-hover:text-brand-accent"
+          >Proyectos</span
+        >
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+      <a href="/#sobre-mi" class="relative group">
+        <span class="transition-colors group-hover:text-brand-accent"
+          >Sobre Mí</span
+        >
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+      <a href="/#contacto" class="relative group">
+        <span class="transition-colors group-hover:text-brand-accent"
+          >Contacto</span
+        >
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+    </nav>
+
+    <!-- Icono de menú móvil -->
+    <div class="md:hidden">
+      <button
+        aria-label="Abrir menú"
+        class="p-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-200 transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  @keyframes slide-down {
+    from {
+      transform: translateY(-200%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-down {
+    animation: slide-down 1.5s ease-out forwards;
+  }
+
+  /* Clases de utilidad para retrasos (Tailwind no las tiene por defecto) */
+  .animation-delay-3000 {
+    animation-delay: 0.3s;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="bg-brand-dark border-t border-white/10 text-brand-light-secondary"
+>
+  <div class="container mx-auto px-6 py-12 animate-fade-in-up">
+    <div class="flex flex-col items-center justify-center space-y-6">
+      <!-- Redes sociales -->
+      <div class="flex space-x-6">
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/borja-monta%C3%B1o-10b46b307/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="text-brand-light-secondary hover:text-brand-accent transition-colors duration-300"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.4h.1c.7-1.3 2.5-2.7 5.1-2.7 5.4 0 6.4 3.6 6.4 8.2V24h-5V15.2c0-2.1 0-4.8-2.9-4.8-2.9 0-3.3 2.3-3.3 4.6V24h-5V8z"
+            ></path>
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/BorjaMtn"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="text-brand-light-secondary hover:text-brand-accent transition-colors duration-300"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.204.084 1.837 1.236 1.837 1.236 1.07 1.834 2.808 1.304 3.495.997.108-.775.42-1.304.762-1.604-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.47-2.382 1.236-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3-.404c1.02.004 2.045.138 3 .404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.874.12 3.176.77.838 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.48 5.92.43.37.823 1.1.823 2.22 0 1.604-.015 2.896-.015 3.29 0 .32.19.694.8.576C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Texto legal -->
+      <p class="text-sm text-center">
+        &copy; {currentYear}
+        <span class="font-semibold text-brand-light">Borja Montaño</span>. Todos
+        los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>

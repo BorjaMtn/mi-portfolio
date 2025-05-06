@@ -1,0 +1,21 @@
+---
+// src/pages/index.astro
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import ContactSection from "../components/ContactSection.astro"; // <-- Importar sección Contacto
+
+const pageTitle = "Desarrollador Web Frontend & Full Stack";
+const pageDescription =
+  "Portfolio profesional de Borja Montaño - Experto en React, Next.js, Laravel y APIs. Creando soluciones web modernas y eficientes.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Hero />
+  <ProjectsSection />
+  <AboutSection />
+
+  {/* Usamos el componente de la Sección Contacto */}
+  <ContactSection />
+</Layout>

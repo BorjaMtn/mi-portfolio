@@ -1,0 +1,230 @@
+---
+const formspreeEndpoint = "https://formspree.io/f/movdvvkd"; // <-- REEMPLAZA ESTO
+---
+
+<section id="contacto" class="relative py-32 bg-brand-dark overflow-hidden z-0">
+  <!-- Fondo Glow dinámico -->
+
+  <div class="container mx-auto px-6 max-w-4xl relative z-10">
+    <div class="text-center mb-16 animate-fade-in">
+      <h2
+        class="text-4xl md:text-5xl font-extrabold text-brand-light leading-tight"
+      >
+        Hablemos<span class="text-brand-accent">.</span>
+      </h2>
+      <p class="mt-4 text-lg text-brand-light-secondary max-w-xl mx-auto">
+        ¿Tienes una idea, propuesta, proyecto o solo quieres saludar? Estoy
+        siempre abierto a nuevas conversaciones.
+      </p>
+    </div>
+
+    <form
+      action={formspreeEndpoint}
+      method="POST"
+      class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-10 space-y-8 transition-all duration-500 hover:shadow-brand-accent/20 animate-fade-in-up animation-delay-300"
+    >
+      <!-- Nombre -->
+      <div class="group">
+        <label
+          for="name"
+          class="block text-sm font-semibold text-brand-light mb-2"
+          >Nombre</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Tu nombre completo"
+          class="w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-brand-light placeholder-brand-light-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all duration-300"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="group">
+        <label
+          for="email"
+          class="block text-sm font-semibold text-brand-light mb-2">Email</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="tu.email@ejemplo.com"
+          class="w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-brand-light placeholder-brand-light-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all duration-300"
+        />
+      </div>
+
+      <!-- Asunto -->
+      <div class="group">
+        <label
+          for="subject"
+          class="block text-sm font-semibold text-brand-light mb-2"
+        >
+          Asunto <span class="text-xs text-brand-light-secondary"
+            >(Opcional)</span
+          >
+        </label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Ej: Propuesta de colaboración"
+          class="w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-brand-light placeholder-brand-light-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all duration-300"
+        />
+      </div>
+
+      <!-- Mensaje -->
+      <div class="group">
+        <label
+          for="message"
+          class="block text-sm font-semibold text-brand-light mb-2"
+          >Mensaje</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          placeholder="Escribe aquí tu mensaje..."
+          class="w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-brand-light placeholder-brand-light-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all duration-300 resize-none"
+        ></textarea>
+      </div>
+
+      <!-- Botón -->
+      <div class="text-center pt-2">
+        <button
+          type="submit"
+          class="relative inline-block px-10 py-3 font-semibold text-brand-dark bg-brand-accent rounded-full transition-all duration-300 hover:scale-105 shadow-md hover:shadow-brand-accent/40"
+        >
+          <span class="relative z-10">Enviar Mensaje</span>
+          <span
+            class="absolute inset-0 rounded-full bg-brand-accent blur-lg opacity-30 animate-pulse"
+          ></span>
+        </button>
+      </div>
+    </form>
+
+    <!-- Alternativa -->
+    <div
+      class="mt-16 text-center text-brand-light-secondary animate-fade-in-up animation-delay-600"
+    >
+      <p class="mb-2">O contáctame directamente en:</p>
+      <a
+        href="https://www.linkedin.com/in/borja-monta%C3%B1o-10b46b307/"
+        class="font-medium text-brand-accent hover:text-brand-accent-hover transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+      <!--
+      <span class="mx-2 text-brand-light-secondary">|</span>
+      <a href="mailto:tuemail@ejemplo.com" class="font-medium text-brand-accent hover:text-brand-accent-hover transition-colors">
+        tuemail@ejemplo.com
+      </a>
+      -->
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes gradient-text {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-text {
+    background-size: 200% auto; /* Tamaño del gradiente para animación */
+    animation: gradient-text 5s linear infinite;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    /* Aplica animación de entrada */
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0; /* Empieza invisible */
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Animación para las formas de fondo */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 15s infinite ease-in-out; /* Duración larga y suave */
+  }
+
+  /* Animación para el brillo del nombre */
+  @keyframes tilt {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(1deg);
+    }
+  }
+  .animate-tilt {
+    animation: tilt 10s infinite linear alternate;
+  }
+
+  /* Clases de utilidad para retrasos (Tailwind no las tiene por defecto) */
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+</style>
